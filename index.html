@@ -43,7 +43,7 @@
 
         </div>
 
-        <a href="./cart.html"><i class="fa-solid fa-cart-shopping mx-3 "></i></a>
+        <a data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="fa-solid fa-cart-shopping mx-3 "></i></a>
 
       </div>
 
@@ -52,23 +52,26 @@
   </header>
 
 
+
+
+
   <!-- <div class="container">
 
         carosello offerte -->
-  <div class="swiper swiper-hero">
+  <div class="swiper swiper-hero w-100">
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
       <!-- Slides -->
       <div class="swiper-slide"><img
-        src="https://source.unsplash.com/1920x500?mom+day"
+        src="https://www.beautye.it/media/wysiwyg/beautye/2024/02/slide-dsk-8sututto-20240229.jpg"
         class="img-fluid"
         alt="hero"></div>  
       <div class="swiper-slide"><img
-        src="https://source.unsplash.com/1920x500?black+friday"
+        src="https://www.spooky2.it/wp-content/uploads/2023/11/BF-1.png"
         class="img-fluid"
         alt="hero"></div>
       <div class="swiper-slide"><img
-        src="https://source.unsplash.com/1920x500?iphone"
+        src="https://www.mea.redingtongroup.com/apple/images/category/iphone-15-plus.png"
         class="img-fluid"
         alt="hero"></div>
 
@@ -115,7 +118,24 @@
 
 
 
+<!-- offcanvas -->
 
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasRightLabel">Il tuo carrello</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    <hr>
+  </div>
+  <div class="offcanvas-body">
+    <div id="divProdottiCarrello">
+
+
+    </div>
+
+
+
+  </div>
+</div>
 
 
 
@@ -126,19 +146,19 @@
       // Optional parameters
       direction: 'horizontal',
       loop: true,
-      slidesPerView: 1,
+      slidesPerView: 'auto',
       breakpoint: {
         768: {
-          slidesPerView: 2,
-          spaceBetween: 40
+          slidesPerView: 1,
+          spaceBetween: 0
         },
         992: {
-          slidesPerView: 4,
-          spaceBetween: 50
+          slidesPerView: 1,
+          spaceBetween: 0
         },
         1200: {
-          slidesPerView: 5,
-          spaceBetween: 50
+          slidesPerView: 1,
+          spaceBetween: 0
         }
       },
 

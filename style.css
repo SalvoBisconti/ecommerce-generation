@@ -75,6 +75,8 @@ footer p{
     margin-bottom: 5rem;
     margin-top: 5rem;
     /* margin-bottom: 50rem; */
+    border: 10px solid red;
+    
     
   }
 
@@ -84,6 +86,11 @@ footer p{
     width: 350px;
     padding: 3rem;
     height: 600;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+
   }
 
   .btn-aggiungi-carrello{
@@ -94,6 +101,9 @@ footer p{
     background-color: transparent;
     color: rgb(172, 223, 18);
     padding-right: 3.3rem;
+    font-family: "Roboto", sans-serif;
+    
+    
   }
 
   .fa-cart-plus{
@@ -104,5 +114,12 @@ footer p{
     padding: 0.9rem;
     position: absolute;
     transform: translateY(-11px) translateX(10px);
-    
   }
+
+ .card-body .btn-aggiungi-carrello{
+    margin-top  : 2rem;
+ }
+
+ 
+
+
