@@ -28,15 +28,14 @@ function creaCard() {
         <div class="card-body">
         <div class="card-title fs-5">${prodotto.title}</div>
         <img src="${prodotto.images[0]}">
-        <p class="card-description">${prodotto.description}</p>
-        <a href="#" class="btn btn-primary">
-            <i class="bi bi-cart-plus"></i>
-            Add to cart</a>
+        <button class="btn-aggiungi-carrello"> Aggiungi al carrello <span class="fa-solid fa-cart-plus" ></span> </button>
         </div>
         </div>
         `
 
     });
+
+    // <p class="card-description">${prodotto.description}</p>
 
     console.log(elettronica);
 

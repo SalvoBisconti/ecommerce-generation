@@ -11,13 +11,14 @@
 .fa-cart-shopping{
     cursor: pointer;
     transform: scale(1.5);
-    color: rgb(172, 223, 18);
+    color: rgb(160, 207, 18);
    
 
 }
 
 body{
     font-family: "Roboto", sans-serif;
+    background-color: rgb(228, 222, 206);
 }
 
 header{
@@ -26,6 +27,8 @@ header{
     width: 100%;
 
 }
+
+
 
 header h1{
     margin-left: 2rem;
@@ -38,11 +41,10 @@ footer{
     display: flex;
     align-items: center;
     flex-direction: column;
-    
+    color: rgb(172, 223, 18);
     bottom: 0;
     width: 100%;
     background-color: #131a22;
-    color: rgb(255, 255, 255);
     padding: 30px 0px 20px 0px;
 }
 
@@ -62,11 +64,6 @@ footer p{
     font-size: small;
 }
 
-.swiper {
-    width: 100%;
-    height: auto;
-  }
-
 
   .swiper_prodotti img{
     width: 100px;
@@ -78,5 +75,34 @@ footer p{
     margin-bottom: 5rem;
     margin-top: 5rem;
     /* margin-bottom: 50rem; */
-    border: 1px solid red;  
+    
+  }
+
+
+  .card-body{
+    background-color: rgb(255, 255, 255);
+    width: 350px;
+    padding: 3rem;
+    height: 600;
+  }
+
+  .btn-aggiungi-carrello{
+    border: 2px solid rgb(172, 223, 18);
+    padding: 0.6rem;
+    border-radius: 2rem;
+    text-decoration: none;
+    background-color: transparent;
+    color: rgb(172, 223, 18);
+    padding-right: 3.3rem;
+  }
+
+  .fa-cart-plus{
+    border-radius: 50%;
+    display: inline-block;
+    background-color: rgb(172, 223, 18);
+    color: white;
+    padding: 0.9rem;
+    position: absolute;
+    transform: translateY(-11px) translateX(10px);
+    
   }

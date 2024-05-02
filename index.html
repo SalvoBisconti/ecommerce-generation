@@ -26,24 +26,10 @@
 
 
 
-  <header class="py-3 mb-3 border-bottom d-flex">
+  <header class="py-3 border-bottom d-flex">
     <h1 class="Logo">Amatron</h1>
     <div class="container align-items-center" style="grid-template-columns: 1fr 2fr;">
 
-      <!-- <div class="dropdown">
-            <a href="#" class="d-flex align-items-center col-lg-4 mb-2 mb-lg-0 link-dark text-decoration-none dropdown-toggle" id="dropdownNavLink" data-bs-toggle="dropdown" aria-expanded="false">
-              <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
-            </a>
-            <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownNavLink">
-              <li><a class="dropdown-item active" href="#" aria-current="page">Overview</a></li>
-              <li><a class="dropdown-item" href="#">Inventory</a></li>
-              <li><a class="dropdown-item" href="#">Customers</a></li>
-              <li><a class="dropdown-item" href="#">Products</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Reports</a></li>
-              <li><a class="dropdown-item" href="#">Analytics</a></li>
-            </ul>
-          </div> -->
 
       <div class="d-flex align-items-center">
         <form class="w-100 me-3">
@@ -54,14 +40,7 @@
           <!-- <div class="flex-shrink-0 dropdown">
                   <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false"> -->
           <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
-          <!-- </a> -->
-          <!-- <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
-                    <li><a class="dropdown-item" href="#">New project...</a></li>
-                    <li><a class="dropdown-item" href="#">Settings</a></li>
-                    <li><a class="dropdown-item" href="#">Profile</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Sign out</a></li>
-                  </ul> -->
+
         </div>
 
         <a href="./cart.html"><i class="fa-solid fa-cart-shopping mx-3 "></i></a>
@@ -76,55 +55,46 @@
   <!-- <div class="container">
 
         carosello offerte -->
-  <div class="swiper">
+  <div class="swiper swiper-hero">
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
       <!-- Slides -->
       <div class="swiper-slide"><img
-        src="https://source.unsplash.com/1920x300?mom+day"
+        src="https://source.unsplash.com/1920x500?mom+day"
         class="img-fluid"
         alt="hero"></div>  
       <div class="swiper-slide"><img
-        src="https://source.unsplash.com/1920x300?black+friday"
+        src="https://source.unsplash.com/1920x500?black+friday"
         class="img-fluid"
         alt="hero"></div>
       <div class="swiper-slide"><img
-        src="https://source.unsplash.com/1920x300?iphone"
+        src="https://source.unsplash.com/1920x500?iphone"
         class="img-fluid"
         alt="hero"></div>
 
     </div>
-    <!-- If we need pagination -->
-    <div class="swiper-pagination"></div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
 
-    <!-- If we need navigation buttons -->
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
 
-    <!-- If we need scrollbar -->
-    <div class="swiper-scrollbar"></div>
+      <!-- If we need scrollbar -->
+      <div class="swiper-scrollbar"></div>
   </div>
 
   </div>
 
 
+    <div class="swiper swiper_prodotti w-100">
+      <div id= "carosello_elettronica" class="swiper-wrapper"></div>
 
-  <div class="swiper_prodotti">
-    <div id= "carosello_elettronica" class="swiper-wrapper">
-    
-
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
 
     </div>
-    <!-- If we need pagination
-    <div class="swiper-pagination"></div> -->
-
-    <!-- If we need navigation buttons -->
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-
-    <!-- If we need scrollbar -->
-    <!-- <div class="swiper-scrollbar"></div> -->
-  </div>
 
 </div>
 
@@ -152,7 +122,7 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
 
-    const swiper = new Swiper('.swiper', {
+    const swiper = new Swiper('.swiper-hero', {
       // Optional parameters
       direction: 'horizontal',
       loop: true,
@@ -187,13 +157,9 @@
       // scrollbar: {
       //   el: '.swiper-scrollbar',
       // },
-    });
+      });
 
   </script>
-
-
-
-
 
 <script>
   var swiper_prodotti = new Swiper('.swiper_prodotti', {
@@ -203,11 +169,11 @@
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
-    on: {
-      resize: function () {
-        swiper.changeDirection(getDirection());
-      },
-    },
+    // on: {
+    //   resize: function () {
+    //     swiper.changeDirection(getDirection());
+    //   },
+    // },
   });
 
   function getDirection() {
