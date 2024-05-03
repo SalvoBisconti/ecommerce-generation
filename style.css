@@ -2,8 +2,10 @@
     justify-content: space-between;
 } */
 
+
 :root {
-    --verde-primary: rgb(148, 192, 17);
+    --verde-primary: #4f930c;
+    /* verde caccola */
 }
 
 
@@ -33,12 +35,11 @@ header{
 }
 
 
-
-header h1{
-    margin-left: 2rem;
-    color: var(--verde-primary);
+#logo{
+    margin-left: 2.5rem;
+    margin-right: 1rem;
+    width: 200px;
 }
-
 
 
 footer{
@@ -54,8 +55,6 @@ footer{
 
 
 
-
-
 footer ul{
     margin-bottom: 10px;
     list-style-type: none;
@@ -64,15 +63,18 @@ footer ul{
     gap: 1.5rem;
 }
 
+
 footer p{
     font-size: small;
 }
+
 
 .swiper_prodotti{
   margin-bottom: 5rem;
   margin-top: 5rem;
   background-color: white;
 }
+
 
 .swiper_prodotti img{
     width: 100px;
@@ -81,8 +83,7 @@ footer p{
 
  
 
-
-  .card-body{
+.card-body{
     background-color: rgb(255, 255, 255);
     width: 350px;
     padding: 3rem;
@@ -91,10 +92,9 @@ footer p{
     align-items: center;
     flex-direction: column;
     
+}
 
-  }
-
-  .btn-aggiungi-carrello{
+.btn-aggiungi-carrello{
     border: 2px solid var(--verde-primary);
     padding: 0.6rem;
     border-radius: 2rem;
@@ -104,8 +104,7 @@ footer p{
     padding-right: 3.3rem;
     font-family: "Roboto", sans-serif;
     
-    
-  }
+}
 
   .fa-cart-plus{
     border-radius: 50%;

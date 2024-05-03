@@ -6,9 +6,17 @@ let laptops = [];
 let elettronica = [];
 
 
+let arrayCart = JSON.parse(localStorage.getItem("carrello")) ? JSON.parse(localStorage.getItem("carrello")) : []; 
+console.log(arrayCart);
+
+
+// se c'è, ti rida il json, altrimenti ti restituisce il carrello vuoto
+
+
 fetch('https://dummyjson.com/products?limit=100')
     .then(response => response.json())
     .then(json => {
+
 
         arrayProducts = json.products;
 
@@ -17,7 +25,12 @@ fetch('https://dummyjson.com/products?limit=100')
         elettronica = smartphones.concat(laptops);
         console.log(elettronica);
         creaCard();
+
+        arrayProducts.forEach(prodotto => {
+            prodotto.quantity = 0;
+        });
     });
+
  
 
  function creaCard() {
@@ -41,7 +54,7 @@ fetch('https://dummyjson.com/products?limit=100')
     let allBtnAggiungiAlCarrello = document.querySelectorAll(`.btn-aggiungi-carrello`);
     [...allBtnAggiungiAlCarrello].forEach(btn => {
         btn.addEventListener('click',function(){
-            aggiungiAlCarrello(this.getAttribute('product-id'));
+            aggiungiAlCarrello(arrayProducts[this.getAttribute('product-id')]);
         });
     });
 
@@ -53,8 +66,30 @@ fetch('https://dummyjson.com/products?limit=100')
 
 
 
-function aggiungiAlCarrello(prodottoId) {
-    console.log("debug");
+function aggiungiAlCarrello(oggettoProdotto) {
+     
+    let id = oggettoProdotto.id-1;
+
+    arrayCart.push(oggettoProdotto);
+    
+    console.log(arrayCart[id]);
+    // console.log(arrayCart[oggettoProdotto.id -1]);
+    
+    aggiornaCarrello();
+    
+};
+
+
+
+
+
+
+
+function aggiornaCarrello() {
+     console.log("debug");
+
+    
+    localStorage.setItem("carrello", JSON.stringify(arrayCart)); //lo salviamo in LocalStorage
 
     let divProdottiCarrello = document.getElementById('divProdottiCarrello');
 
@@ -68,7 +103,7 @@ function aggiungiAlCarrello(prodottoId) {
 
         <div class="carrelloQuantita">
             <span class="fa-solid fa-minus decreaseQuantity"></span>
-            <input type="number" class="quantityInput" max="99" min="1" value="1">
+            <input type="number" class="quantityInput" max="99" min="1" value="${arrayProducts[prodottoId-1].quantity}">
             <span class="fa-solid fa-plus increaseQuantity"></span>
         </div>
         
@@ -77,27 +112,14 @@ function aggiungiAlCarrello(prodottoId) {
     <hr>
     `;
 
-    divProdottiCarrello.addEventListener('click', function(event) {
-        const target = event.target;
-
-        if (target.classList.contains('decreaseQuantity')) {
-            const input = target.nextElementSibling; // troverà l'input
-            if (input.value > 1) {
-                input.value = parseInt(input.value) - 1;
-                target.style.color = "black"; // ripristina il colore
-            } else {
-                target.style.color = "gray"; // se il valore è 1 o inferiore
-            }
-        }
-
-        if (target.classList.contains('increaseQuantity')) {
-            const input = target.previousElementSibling; // troverà l'input
-            if (input.value < 99) {
-                input.value = parseInt(input.value) + 1;
-                target.style.color = "black"; // ripristina il colore
-            } else {
-                target.style.color = "gray"; // se il valore è 99 o superiore
-            }
-        }
-    });
+    
+    
 }
+
+
+
+
+
+
+
+
