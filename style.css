@@ -2,6 +2,10 @@
     justify-content: space-between;
 } */
 
+:root {
+    --verde-primary: rgb(148, 192, 17);
+}
+
 
 .box_profile_cart{
     justify-content: center;
@@ -11,7 +15,7 @@
 .fa-cart-shopping{
     cursor: pointer;
     transform: scale(1.5);
-    color: rgb(160, 207, 18);
+    color: var(--verde-primary);
    
 
 }
@@ -32,7 +36,7 @@ header{
 
 header h1{
     margin-left: 2rem;
-    color: rgb(172, 223, 18);
+    color: var(--verde-primary);
 }
 
 
@@ -41,7 +45,7 @@ footer{
     display: flex;
     align-items: center;
     flex-direction: column;
-    color: rgb(172, 223, 18);
+    color: var(--verde-primary);
     bottom: 0;
     width: 100%;
     background-color: #131a22;
@@ -64,21 +68,18 @@ footer p{
     font-size: small;
 }
 
+.swiper_prodotti{
+  margin-bottom: 5rem;
+  margin-top: 5rem;
+  background-color: white;
+}
 
-  .swiper_prodotti img{
+.swiper_prodotti img{
     width: 100px;
     height: 100px;
-  }
+}
 
  
-  .swiper_prodotti{
-    margin-bottom: 5rem;
-    margin-top: 5rem;
-    /* margin-bottom: 50rem; */
-    border: 10px solid red;
-    
-    
-  }
 
 
   .card-body{
@@ -94,12 +95,12 @@ footer p{
   }
 
   .btn-aggiungi-carrello{
-    border: 2px solid rgb(172, 223, 18);
+    border: 2px solid var(--verde-primary);
     padding: 0.6rem;
     border-radius: 2rem;
     text-decoration: none;
     background-color: transparent;
-    color: rgb(172, 223, 18);
+    color: var(--verde-primary);
     padding-right: 3.3rem;
     font-family: "Roboto", sans-serif;
     
@@ -109,7 +110,7 @@ footer p{
   .fa-cart-plus{
     border-radius: 50%;
     display: inline-block;
-    background-color: rgb(172, 223, 18);
+    background-color: var(--verde-primary);
     color: white;
     padding: 0.9rem;
     position: absolute;
@@ -123,3 +124,52 @@ footer p{
  
 
 
+.elProdottoCarrello {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.elProdottoCarrello p {
+    margin: 0;
+}
+
+.carrelloNomeEImgProdotto {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.elProdottoCarrello img {
+    width: auto;
+    height: 100px;
+}
+
+.carrelloQuantita {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.carrelloQuantita input {
+    width: 30px;
+    text-align: center;
+    border-radius: 0.3rem;
+}
+
+.decreaseOneQuantity {
+    color: gray;
+}
+
+
+
+/* Disable input number arrows */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
