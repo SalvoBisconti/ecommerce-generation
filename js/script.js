@@ -28,7 +28,9 @@ fetch('https://dummyjson.com/products?limit=100')
 
         arrayProducts.forEach(prodotto => {
             prodotto.quantity = 0;
+            
         });
+        aggiornaCarrello();
     });
 
  
@@ -54,7 +56,7 @@ fetch('https://dummyjson.com/products?limit=100')
     let allBtnAggiungiAlCarrello = document.querySelectorAll(`.btn-aggiungi-carrello`);
     [...allBtnAggiungiAlCarrello].forEach(btn => {
         btn.addEventListener('click',function(){
-            aggiungiAlCarrello(arrayProducts[this.getAttribute('product-id')]);
+            aggiungiAlCarrello(arrayProducts[this.getAttribute('product-id')-1]);
         });
     });
 
@@ -67,10 +69,21 @@ fetch('https://dummyjson.com/products?limit=100')
 
 
 function aggiungiAlCarrello(oggettoProdotto) {
-     
+    
     let id = oggettoProdotto.id-1;
 
-    arrayCart.push(oggettoProdotto);
+    // oggettoProdotto.quantity++;
+    
+    // arrayCart.filter(prodotto => prodotto.id != oggettoProdotto.id);
+    if (!arrayCart.includes(oggettoProdotto.id)){ /*(oggettoProdotto.id) bisogna cercare l'oggetto in se*/
+        arrayCart.push(oggettoProdotto);
+    }
+        arrayCart[id].quantity++
+
+  
+    
+
+
     
     console.log(arrayCart[id]);
     // console.log(arrayCart[oggettoProdotto.id -1]);
@@ -87,36 +100,53 @@ function aggiungiAlCarrello(oggettoProdotto) {
 
 function aggiornaCarrello() {
      console.log("debug");
-
+    
     
     localStorage.setItem("carrello", JSON.stringify(arrayCart)); //lo salviamo in LocalStorage
-
     let divProdottiCarrello = document.getElementById('divProdottiCarrello');
 
-    divProdottiCarrello.innerHTML += 
-    `
-    <div class="elProdottoCarrello">
-        <div class="carrelloNomeEImgProdotto">
-            <img src="${arrayProducts[prodottoId - 1].images[0]}" alt="foto prodotto">
-            <p>${arrayProducts[prodottoId - 1].title}</p>
-        </div>
+    divProdottiCarrello.innerHTML = "";
 
-        <div class="carrelloQuantita">
-            <span class="fa-solid fa-minus decreaseQuantity"></span>
-            <input type="number" class="quantityInput" max="99" min="1" value="${arrayProducts[prodottoId-1].quantity}">
-            <span class="fa-solid fa-plus increaseQuantity"></span>
+    arrayCart.forEach(prodotto => {
+       
+        let prodottoId = prodotto.id -1;
+        divProdottiCarrello.innerHTML += 
+        `
+        <div class="elProdottoCarrello">
+            <div class="carrelloNomeEImgProdotto">
+                <img src="${arrayProducts[prodottoId].images[0]}" alt="foto prodotto">
+                <p>${arrayProducts[prodottoId].title}</p>
+            </div>
+
+            <div class="carrelloQuantita">
+                <span class="fa-solid fa-minus decreaseQuantity"></span>
+                <input type="number" class="quantityInput" max="99" min="1" value="${arrayProducts[prodottoId].quantity}">
+                <span class="fa-solid fa-plus increaseQuantity"></span>
+            </div>
+            
+            <p>${arrayProducts[prodottoId].price},99€</p>
         </div>
-        
-        <p>${arrayProducts[prodottoId - 1].price},99€</p>
-    </div>
-    <hr>
-    `;
+        <hr>
+        `;
+      
+ 
+    });
+
+    
 
     
     
 }
 
 
+
+// mettere i controlli per evitare l'aggiunta doppia del prodotto nel carrello
+// pagina del prodotto
+// pagina categorie
+// checkout
+// al click del logo torna alla home
+// al click di aggiungi al carrello, si apre l'offcanvas / o notifica che ti avverte che è stato aggiunto
+// responsiveness secondo swiper
 
 
 
