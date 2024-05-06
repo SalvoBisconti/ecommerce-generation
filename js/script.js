@@ -97,7 +97,9 @@ function aggiornaCarrello() {
     let divProdottiCarrello = document.getElementById('divProdottiCarrello');
 
     divProdottiCarrello.innerHTML = "";
-
+    if (arrayCart.length == 0) {
+        divProdottiCarrello.textContent = 'il tuo carrello è vuoto, per ora...'
+    }
     arrayCart.forEach(prodotto => {
         
         divProdottiCarrello.innerHTML += 

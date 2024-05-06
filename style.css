@@ -36,7 +36,7 @@ header{
 
 
 #logo{
-    margin-left: 2.5rem;
+    margin-left: 1rem;
     margin-right: 1rem;
     width: 200px;
 }
@@ -51,6 +51,7 @@ footer{
     width: 100%;
     background-color: #131a22;
     padding: 30px 0px 20px 0px;
+    text-align: center;
 }
 
 
@@ -67,6 +68,12 @@ footer ul{
 footer p{
     font-size: small;
 }
+
+footer img{
+    width: 200px;
+    margin-bottom: 0.8rem;
+}
+
 
 
 .swiper_prodotti{
