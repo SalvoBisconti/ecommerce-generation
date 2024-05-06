@@ -46,7 +46,8 @@ fetch('https://dummyjson.com/products?limit=100')
                 <div class="card-title fs-5 mb-2">${prodotto.title}</div>
                 <img src="${prodotto.images[0]}">
                 <p>${prodotto.price},99€</p> 
-                <button product-id="${prodotto.id}" class="btn-aggiungi-carrello">Aggiungi al carrello<span class="fa-solid fa-cart-plus"></span></button>
+                
+                <button data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" data-product-id="${prodotto.id}" class="btn-aggiungi-carrello">Aggiungi al carrello<span class="fa-solid fa-cart-plus"></span></button>
             </div>
         </div>
         `
@@ -56,7 +57,7 @@ fetch('https://dummyjson.com/products?limit=100')
     let allBtnAggiungiAlCarrello = document.querySelectorAll(`.btn-aggiungi-carrello`);
     [...allBtnAggiungiAlCarrello].forEach(btn => {
         btn.addEventListener('click',function(){
-            aggiungiAlCarrello(arrayProducts[this.getAttribute('product-id')-1]);
+            aggiungiAlCarrello(arrayProducts[this.getAttribute('data-product-id')-1]);
         });
     });
 
@@ -70,23 +71,13 @@ fetch('https://dummyjson.com/products?limit=100')
 
 function aggiungiAlCarrello(oggettoProdotto) {
     
-    let id = oggettoProdotto.id-1;
-
-    // oggettoProdotto.quantity++;
-    
-    // arrayCart.filter(prodotto => prodotto.id != oggettoProdotto.id);
-    if (!arrayCart.includes(oggettoProdotto.id)){ /*(oggettoProdotto.id) bisogna cercare l'oggetto in se*/
+    let containsProduct = arrayCart.some(prodotto => prodotto.id == oggettoProdotto.id)
+    if (!containsProduct){ 
         arrayCart.push(oggettoProdotto);
     }
-        arrayCart[id].quantity++
-
-  
+    let productIndex = arrayCart.findIndex(prodotto => prodotto.id == oggettoProdotto.id)
     
-
-
-    
-    console.log(arrayCart[id]);
-    // console.log(arrayCart[oggettoProdotto.id -1]);
+    arrayCart[productIndex].quantity += 1;
     
     aggiornaCarrello();
     
@@ -108,26 +99,25 @@ function aggiornaCarrello() {
     divProdottiCarrello.innerHTML = "";
 
     arrayCart.forEach(prodotto => {
-       
-        let prodottoId = prodotto.id -1;
+        
         divProdottiCarrello.innerHTML += 
         `
         <div class="elProdottoCarrello">
             <div class="carrelloNomeEImgProdotto">
-                <img src="${arrayProducts[prodottoId].images[0]}" alt="foto prodotto">
-                <p>${arrayProducts[prodottoId].title}</p>
+                <img src="${prodotto.images[0]}" alt="foto prodotto">
+                <p>${prodotto.title}</p>
             </div>
 
             <div class="carrelloQuantita">
                 <span class="fa-solid fa-minus decreaseQuantity"></span>
-                <input type="number" class="quantityInput" max="99" min="1" value="${arrayProducts[prodottoId].quantity}">
+                <input type="number" class="quantityInput" max="99" min="1" value="${prodotto.quantity}">
                 <span class="fa-solid fa-plus increaseQuantity"></span>
             </div>
             
-            <p>${arrayProducts[prodottoId].price},99€</p>
+            <p>${prodotto.price * prodotto.quantity},99€</p>
         </div>
         <hr>
-        `;
+        `
       
  
     });
@@ -140,12 +130,10 @@ function aggiornaCarrello() {
 
 
 
-// mettere i controlli per evitare l'aggiunta doppia del prodotto nel carrello
 // pagina del prodotto
 // pagina categorie
 // checkout
 // al click del logo torna alla home
-// al click di aggiungi al carrello, si apre l'offcanvas / o notifica che ti avverte che è stato aggiunto
 // responsiveness secondo swiper
 
 
