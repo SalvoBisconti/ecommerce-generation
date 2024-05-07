@@ -7,7 +7,6 @@ let elettronica = [];
 
 
 let arrayCart = JSON.parse(localStorage.getItem("carrello")) ? JSON.parse(localStorage.getItem("carrello")) : []; 
-console.log(arrayCart);
 
 
 // se c'è, ti rida il json, altrimenti ti restituisce il carrello vuoto
@@ -16,20 +15,20 @@ console.log(arrayCart);
 fetch('https://dummyjson.com/products?limit=100')
     .then(response => response.json())
     .then(json => {
-
-
+        
         arrayProducts = json.products;
 
         smartphones = arrayProducts.filter((prodotto) => prodotto.category == "smartphones");
         laptops = arrayProducts.filter((prodotto) => prodotto.category == "laptops");
         elettronica = smartphones.concat(laptops);
-        console.log(elettronica);
+        
         creaCard();
-
+        
         arrayProducts.forEach(prodotto => {
             prodotto.quantity = 0;
-            
+            prodotto.price += 0.99;
         });
+
         aggiornaCarrello();
     });
 
@@ -45,7 +44,7 @@ fetch('https://dummyjson.com/products?limit=100')
             <div class="card-body">
                 <div class="card-title fs-5 mb-2">${prodotto.title}</div>
                 <img src="${prodotto.images[0]}">
-                <p>${prodotto.price},99€</p> 
+                <p>${prodotto.price}€</p> 
                 
                 <button data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" data-product-id="${prodotto.id}" class="btn-aggiungi-carrello">Aggiungi al carrello<span class="fa-solid fa-cart-plus"></span></button>
             </div>
@@ -90,15 +89,13 @@ function aggiungiAlCarrello(oggettoProdotto) {
 
 
 function aggiornaCarrello() {
-     console.log("debug");
-    
     
     localStorage.setItem("carrello", JSON.stringify(arrayCart)); //lo salviamo in LocalStorage
     let divProdottiCarrello = document.getElementById('divProdottiCarrello');
 
     divProdottiCarrello.innerHTML = "";
     if (arrayCart.length == 0) {
-        divProdottiCarrello.textContent = 'il tuo carrello è vuoto, per ora...'
+        divProdottiCarrello.textContent = 'Il tuo carrello è vuoto, per ora...'
     }
     arrayCart.forEach(prodotto => {
         
@@ -116,7 +113,7 @@ function aggiornaCarrello() {
                 <span class="fa-solid fa-plus increaseQuantity"></span>
             </div>
             
-            <p>${prodotto.price * prodotto.quantity},99€</p>
+            <p>${prodotto.price * prodotto.quantity}€</p>
         </div>
         <hr>
         `

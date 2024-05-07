@@ -18,13 +18,19 @@
     cursor: pointer;
     transform: scale(1.5);
     color: var(--verde-primary);
-   
-
+    transition: all 0.2s ease-in-out;
 }
+.fa-cart-shopping:hover {
+    color: green;
+  }
+
+
 
 body{
     font-family: "Roboto", sans-serif;
     background-color: rgb(228, 222, 206);
+    min-height: 100%;
+    height: auto;
 }
 
 header{
@@ -54,6 +60,10 @@ footer{
     text-align: center;
 }
 
+footer a {
+    color: var(--verde-primary);
+}
+
 
 
 footer ul{
@@ -62,11 +72,13 @@ footer ul{
     padding: 0;
     display: flex;
     gap: 1.5rem;
+    font-size: 0.9rem;
 }
 
 
 footer p{
-    font-size: small;
+    font-size: smaller;
+    color: rgba(128, 128, 128, 0.356);
 }
 
 footer img{
@@ -82,23 +94,22 @@ footer img{
   background-color: white;
 }
 
+.swiper_prodotti h3{
+    margin: 1.5rem 0 0.5rem 5vh;
+}
 
 .swiper_prodotti img{
     width: 100px;
     height: 100px;
 }
 
- 
 
 .card-body{
     background-color: rgb(255, 255, 255);
-    width: 350px;
-    padding: 3rem;
-    height: 600;
+    margin: 1rem 0 2rem 0;
     display: flex;
     align-items: center;
     flex-direction: column;
-    
 }
 
 .btn-aggiungi-carrello{
@@ -110,18 +121,31 @@ footer img{
     color: var(--verde-primary);
     padding-right: 3.3rem;
     font-family: "Roboto", sans-serif;
-    
+    transition: all 0.3s ease-in-out;
 }
 
-  .fa-cart-plus{
+.btn-aggiungi-carrello:hover {
+    color: white;
+    border-color: var(--verde-primary);
+    background-color: var(--verde-primary);
+}
+
+.btn-aggiungi-carrello:active, .btn-aggiungi-carrello:active .fa-cart-plus {
+    background-color:#487a15;
+    border-color: transparent;
+}
+
+.fa-cart-plus{
     border-radius: 50%;
     display: inline-block;
     background-color: var(--verde-primary);
     color: white;
-    padding: 0.9rem;
+    padding: 15px;
     position: absolute;
-    transform: translateY(-11px) translateX(10px);
-  }
+    transform: translateY(-11px) translateX(8px);
+    transition: all 0.3s ease-in-out;
+}
+
 
  .card-body .btn-aggiungi-carrello{
     margin-top  : 2rem;

@@ -3,7 +3,7 @@ const swiper = new Swiper('.swiper-hero', {
       direction: 'horizontal',
       loop: true,
       slidesPerView: 'auto',
-      breakpoint: {
+      breakpoints: {
         768: {
           slidesPerView: 1,
           spaceBetween: 40
@@ -42,7 +42,32 @@ const swiper = new Swiper('.swiper-hero', {
       
   var swiper_prodotti = new Swiper('.swiper_prodotti', {
     slidesPerView: 5,
-    direction: getDirection(),
+    spaceBetween: 10,
+    centeredSlides: true,
+    centeredSlidesBounds: true,
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+        spaceBetween: 0
+      },
+      500: {
+        slidesPerView: 2,
+        spaceBetween: 0
+      },
+      650: {
+        slidesPerView: 3,
+        spaceBetween: 0
+      },
+      1250: {
+        slidesPerView: 4,
+        spaceBetween: 0
+      },
+      1600: {
+        slidesPerView: 5,
+        spaceBetween: 0
+      }
+    },
+    // direction: getDirection(),
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
@@ -51,9 +76,9 @@ const swiper = new Swiper('.swiper-hero', {
     preventClicksPropagation: false
   });
 
-  function getDirection() {
-    var windowWidth = window.innerWidth;
-    var direction = window.innerWidth <= 760 ? 'vertical' : 'horizontal';
+  // function getDirection() {
+  //   var windowWidth = window.innerWidth;
+  //   // var direction = window.innerWidth <= 760 ? 'vertical' : 'horizontal';
 
-    return direction;
-  }
+  //   return direction;
+  // }

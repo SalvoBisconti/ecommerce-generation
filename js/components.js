@@ -1,6 +1,6 @@
 let header = document.getElementById('header')
 
-header.innerHTML = `<a href="./"><img id = "logo" src="./img/logo.webp" alt=""></a>
+header.innerHTML = `<a href="./index.html"><img id = "logo" src="./img/logo.webp" alt=""></a>
 
 <div class="container align-items-center" style="grid-template-columns: 1fr 2fr;">
   <div class="d-flex align-items-center">
@@ -19,18 +19,30 @@ header.innerHTML = `<a href="./"><img id = "logo" src="./img/logo.webp" alt=""><
 </div>`
 
 
+
 let footer = document.getElementById('footer')
 
 footer.innerHTML = `   
 <a href="./"><img id = "logo" src="./img/logo.webp" alt=""></a>
 <ul>
-<li>Condizioni generali di uso e vendita</li>
-<li>Informativa sulla privacy</li>
-<li>Area legale</li>
-<li>Cookie</li>
-<li>Pubblicità definita in base agli interessi</li>
+  <a href="">
+    <li>Condizioni generali di uso e vendita</li>
+  </a>
+  <a href="">
+    <li>Informativa sulla privacy</li>
+  </a>
+  <a href="">
+    <li>Area legale</li>
+  </a>
+  <a href="">
+    <li>Cookie</li>
+  </a>
+  <a href="">
+    <li>Pubblicità definita in base agli interessi</li>
+  </a>
 </ul>
 <p>©2024 Amatron.com, Inc. o società affiliate</p> `
+
 
 
 let offcanvasRight = document.getElementById('offcanvasRight')
