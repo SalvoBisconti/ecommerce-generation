@@ -1,15 +1,15 @@
 
 let arrayProducts = [];
 
-let smartphones = [];
-let laptops = [];
 let elettronica = [];
+let abbigliamento_uomo = [];
+let abbigliamento_donna = [];
+let accessori = [];
+let arredamento = [];
+
 
 
 let arrayCart = JSON.parse(localStorage.getItem("carrello")) ? JSON.parse(localStorage.getItem("carrello")) : []; 
-
-
-// se c'è, ti rida il json, altrimenti ti restituisce il carrello vuoto
 
 
 fetch('https://dummyjson.com/products?limit=100')
@@ -17,12 +17,8 @@ fetch('https://dummyjson.com/products?limit=100')
     .then(json => {
         
         arrayProducts = json.products;
-
-        smartphones = arrayProducts.filter((prodotto) => prodotto.category == "smartphones");
-        laptops = arrayProducts.filter((prodotto) => prodotto.category == "laptops");
-        elettronica = smartphones.concat(laptops);
         
-        creaCard();
+        estraiCategorie();
         
         arrayProducts.forEach(prodotto => {
             prodotto.quantity = 0;
@@ -30,11 +26,53 @@ fetch('https://dummyjson.com/products?limit=100')
         });
 
         aggiornaCarrello();
+
+    let paginaCorrente = window.location.href.split("/").pop()
+
+        if (paginaCorrente == "index.html") {
+            creaCardSwiper();
+        }else if (paginaCorrente == "catalogo.html"){
+            creaCardCatalogo();
+        }
+        
     });
 
- 
+    let arrayCategorie = [];
+    
+    function estraiCategorie() {
 
- function creaCard() {
+    let smartphone = arrayProducts.filter((prodotto) => prodotto.category == "smartphones");
+    let laptop = arrayProducts.filter((prodotto) => prodotto.category == "laptops");
+    elettronica = smartphone.concat(laptop);
+
+    let camicie_uomo = arrayProducts.filter((prodotto) => prodotto.category == "mens-shirts");
+    let scarpe_uomo = arrayProducts.filter((prodotto) => prodotto.category == "mens-shirts");
+    abbigliamento_uomo = camicie_uomo.concat(scarpe_uomo);
+
+    let magliette_donna = arrayProducts.filter((prodotto) => prodotto.category == "womens-shirts");
+    let scarpe_donna = arrayProducts.filter((prodotto) => prodotto.category == "womens-shoes");
+    let top = arrayProducts.filter((prodotto) => prodotto.category == "tops");
+    abbigliamento_donna = magliette_donna.concat(scarpe_donna).concat(top);
+
+    let orologi_uomo = arrayProducts.filter((prodotto) => prodotto.category == "mens-watches");
+    let orologi_donna = arrayProducts.filter((prodotto) => prodotto.category == "womens-watches");
+    let borse = arrayProducts.filter((prodotto) => prodotto.category == "womens-bags");
+    let gioielli = arrayProducts.filter((prodotto) => prodotto.category == "womens-jewellery");
+    let occhiali_da_sole = arrayProducts.filter((prodotto) => prodotto.category == "sunglasses");
+    let profumi = arrayProducts.filter((prodotto) => prodotto.category == "fragrances");
+    accessori = orologi_uomo.concat(orologi_donna).concat(borse).concat(gioielli).concat(occhiali_da_sole).concat(profumi);
+
+    let decorazioni = arrayProducts.filter((prodotto) => prodotto.category == "home-decoration");
+    let mobili = arrayProducts.filter((prodotto) => prodotto.category == "furniture");
+    arredamento = decorazioni.concat(mobili);
+
+}
+
+
+
+ function creaCardSwiper() {
+
+    estraiCategorie();
     let carosello_elettronica = document.getElementById('carosello_elettronica');
 
     elettronica.forEach(prodotto => {
@@ -59,9 +97,6 @@ fetch('https://dummyjson.com/products?limit=100')
             aggiungiAlCarrello(arrayProducts[this.getAttribute('data-product-id')-1]);
         });
     });
-
-
-
 
 }
 
@@ -121,19 +156,24 @@ function aggiornaCarrello() {
  
     });
 
-    
-
-    
-    
 }
 
 
 
-// pagina del prodotto
-// pagina categorie
-// checkout
+
+function creaCardCatalogo() {
+    
+}
+
+// navbar delle categorie + dropdown sottocategorie
+
+// pagina del singolo prodotto //Yeison
+
+// checkout utente
+
+
 // al click del logo torna alla home
-// responsiveness secondo swiper
+
 
 
 

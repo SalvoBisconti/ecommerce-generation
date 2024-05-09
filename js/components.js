@@ -16,7 +16,72 @@ header.innerHTML = `<a href="./index.html"><img id = "logo" src="./img/logo.webp
     <a data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="fa-solid fa-cart-shopping mx-3 "></i></a>
 
   </div>
-</div>`
+
+
+  
+  <div class="navbar_categorie">
+
+    <div class="dropdown">
+      <a data-bs-toggle="dropdown" aria-expanded="false" class="pippo" href="">
+        <p>Elettronica</p>
+      </a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Smartphone</a></li>
+        <li><a class="dropdown-item" href="#">Laptop</a></li>
+      </ul>
+    </div>
+
+    <div class="dropdown">
+      <a data-bs-toggle="dropdown" aria-expanded="false" class="pippo" href="">
+        <p>Abbigliamento Donna</p>
+      </a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Magliette</a></li>
+        <li><a class="dropdown-item" href="#">Top</a></li>
+        <li><a class="dropdown-item" href="#">Scarpe</a></li>
+      </ul>
+    </div>
+
+    <div class="dropdown">
+      <a data-bs-toggle="dropdown" aria-expanded="false" class="pippo" href="">
+        <p>Abbigliamento Uomo</p>
+      </a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Camicie</a></li>
+        <li><a class="dropdown-item" href="#">Scarpe</a></li>
+      </ul>
+    </div>
+
+    <div class="dropdown">
+      <a data-bs-toggle="dropdown" aria-expanded="false" class="pippo" href="">
+        <p>Accessori Donna & Uomo</p>
+      </a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Orologi Donna</a></li>
+        <li><a class="dropdown-item" href="#">Orologi Uomo</a></li>
+        <li><a class="dropdown-item" href="#">Borse</a></li>
+        <li><a class="dropdown-item" href="#">Gioielli</a></li>
+        <li><a class="dropdown-item" href="#">Profumi</a></li>
+        <li><a class="dropdown-item" href="#">Occhiali da sole</a></li>
+      </ul>
+    </div>
+
+    <div class="dropdown">
+      <a data-bs-toggle="dropdown" aria-expanded="false" class="pippo" href="">
+      <p>Arredamento</p>
+      </a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Decorazioni per la casa</a></li>
+        <li><a class="dropdown-item" href="#">Mobili</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+</div>
+`
+
+
 
 
 
@@ -57,3 +122,6 @@ offcanvasRight.innerHTML = `    <div class="offcanvas-header">
 </div>
 </div>
 `
+
+
+
