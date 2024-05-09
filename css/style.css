@@ -412,3 +412,57 @@ input[type="number"] {
 
 
 
+
+
+
+/*
+
+                PAGINA OGGETTO
+
+*/
+
+
+#oggetto {
+    
+    text-align: left;
+    color: var(--verde-primary);
+    width: 100%;
+    background-color: #131a22;
+    padding: 20px 0px 20px 0px;
+    margin-top: 1rem;
+
+}
+
+.col-4{
+background-color: rgb(255, 255, 255);
+
+margin: 1rem;
+text-align: center;
+
+}
+
+.col-6 {
+background-color: rgb(255, 255, 255);
+
+margin: 1rem;
+text-align: center;
+}
+
+.quantita {
+border-radius: 10rem;
+}
+
+
+
+
+.prod-wrapper {
+display: flex;
+column-gap: 1rem;
+}
+
+
+#des_oggetto {
+text-align: right;
+}
+
+
