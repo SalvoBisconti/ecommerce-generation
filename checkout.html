@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Bootstrap 5.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Roboto font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-dark">
+    <header class="py-3 border-bottom d-flex" id="header"></header>
+
+    <div id="divCheckout" class="container">
+        <div class="row">
+            <div id="divCarrelloCheckout" class="col-sm-12 col-md-12 col-lg-8">
+                <h1>Il tuo carrello</h1>
+                <hr>
+
+                <div class="divCheckoutProductCard">
+                    <div class="carrelloNomeEImgProdotto">
+                        <img src="https://source.unsplash.com/400x400?music-vinyl-cover" alt="">
+                        <!-- <img src="${prodotto.images[0]}" alt="foto prodotto"> -->
+                        <p>${prodotto.title}</p>
+                    </div>
+
+                    <div class="carrelloQuantita">
+                        <span class="fa-solid fa-minus decreaseQuantity"></span>
+                        <input type="number" class="quantityInput" max="99" min="1" value="${prodotto.quantity}">
+                        <span class="fa-solid fa-plus increaseQuantity"></span>
+                    </div>
+
+                    <p>€ 10.00</p>
+
+                </div>
+
+                <hr>
+
+                <div class="divCheckoutProductCard">
+                    <div class="carrelloNomeEImgProdotto">
+                        <img src="https://source.unsplash.com/400x400?music-vinyl-cover-2" alt="">
+                        <!-- <img src="${prodotto.images[0]}" alt="foto prodotto"> -->
+                        <p>${prodotto.title}</p>
+                    </div>
+
+                    <div class="carrelloQuantita">
+                        <span class="fa-solid fa-minus decreaseQuantity"></span>
+                        <input type="number" class="quantityInput" max="99" min="1" value="${prodotto.quantity}">
+                        <span class="fa-solid fa-plus increaseQuantity"></span>
+                    </div>
+
+                    <p>€ 10.00</p>
+                </div>
+                
+                <hr>
+
+                <div class="divCheckoutProductCard">
+                    <div class="carrelloNomeEImgProdotto">
+                        <img src="https://source.unsplash.com/400x400?music-vinyl-cover-3" alt="">
+                        <!-- <img src="${prodotto.images[0]}" alt="foto prodotto"> -->
+                        <p>${prodotto.title}</p>
+                    </div>
+
+                    <div class="carrelloQuantita">
+                        <span class="fa-solid fa-minus decreaseQuantity"></span>
+                        <input type="number" class="quantityInput" max="99" min="1" value="${prodotto.quantity}">
+                        <span class="fa-solid fa-plus increaseQuantity"></span>
+                    </div>
+
+                    <p>€ 10.00</p>
+
+                </div>
+                
+                <hr>
+
+
+            </div>
+
+
+            <div id="divRiepilogoOrdine" class="col-sm">
+                <h2>Riepilogo ordine</h2>
+                <hr>
+                <div class="divCheckoutSummary">
+                    <div class="articoliCheckout">
+                        <h4>ARTICOLI:</h4><p id="numeroArticoliCheckout">0</p>
+                    </div>
+                        <p id="subtotaleCheckout">€ 0.00</p>
+                </div>
+
+                <form>
+                    <div class="divSpedizione">
+                        <h4>SPEDIZIONE</h4>
+                        <select name="" id="">
+                            <option value="5">Standard (5€) ― entro 7 giorni</option>
+                            <option value="10">Premium (10€) ― entro 3 giorni</option>
+                            <option value="15">Consegna oggi (15€)</option>
+                        </select>
+                    </div>
+                    <div class="divCodiceSconto">
+                        <h4>CODICE SCONTO</h4>
+                        <input type="text" name="" id="" maxlength="24">
+                        <p>Inserisci il codice</p>
+                    </div>
+                    <hr id="checkoutSummaryEnd">
+                    <div class="divAcquisto">
+                        <div class="divAcquisto">
+                            <h4>TOTALE</h4>
+                            <h6>IVA incl.</h6>
+                        </div>
+                        <p id="totaleCheckout">€ 0.00</p>
+                    </div>
+                    <div class="divBtnConfirmOrder">
+                        <button id="btnConfirmOrder" class="btn">Conferma ordine</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <footer id="footer_catalogo"></footer>
+    
+    <script src="./js/components.js"></script>
+    <script src="./js/checkout.js"></script>
+    <script src="./js/script.js"></script>
+
+    <style>
+        #divCheckout {
+            color: rgb(223, 222, 222);
+            margin-top: 100px;
+        }
+        #divCarrelloCheckout {
+            display: flex;
+            flex-direction: column;
+        }
+        #divCarrelloCheckout h1 {
+            font-weight: 700;
+            margin-bottom: 1.6rem;
+        }
+
+
+        .divCheckoutProductCard {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-right: 8rem;
+        }
+
+
+        .divCheckoutProductCard p {
+            margin: 0;
+        }
+
+        .divCheckoutProductCard img{
+            width: 125px;
+            height: 125px;
+            border-radius: 0.5rem;
+            margin: 0.5rem 1.2rem 1.5rem 0;
+        }
+
+        .articoliCheckout {
+            margin-bottom: 0.2rem;
+        }
+
+        .divCheckoutSummary {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #divRiepilogoOrdine h2 {
+            display: inline-block;
+            margin-bottom: 1rem;
+            margin-top: 1.4rem;
+            font-weight: 600;
+            font-size: 1.8rem;
+        }
+        #divRiepilogoOrdine h4 {
+            display: inline-block;
+            font-weight: 500;
+            margin-right: 0.5rem;
+            margin-bottom: 1rem;
+            margin-top: 1rem;
+            font-size: 1.3rem;
+        }
+        #numeroArticoliCheckout {
+            display: inline;
+            font-size: medium;
+            font-weight: 600;
+            color: #fff;
+            border-radius: 0.3rem;
+            padding: 0.2rem 0.6rem;
+            background-color: var(--verde-primary);
+        }
+        #prezzoCheckout {
+            display: inline;
+            font-size: x-large;
+            font-weight: 500;
+        }
+
+        .divSpedizione {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .divSpedizione select {
+            font-size: 1rem;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .divCodiceSconto {
+            display: flex;
+            flex-direction: column;
+        }
+        .divCodiceSconto input {
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            font-size: 1.2rem;
+            border: none;
+            height: 50px;
+            text-transform: uppercase;
+        }
+        .divCodiceSconto p {
+            margin-top: 0.5rem;
+        }
+
+        #checkoutSummaryEnd {
+            margin-top: 1.5rem;
+            margin-bottom: 0.2rem;
+        }
+
+
+        .divAcquisto * {
+            margin-bottom: 0;
+        }
+        .divAcquisto {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.6rem;
+        }
+        .divAcquisto h6 {
+            display: inline-block;
+            font-size: 0.8rem;
+            align-self: center;
+            transform: translateY(4px)
+        }
+        .divAcquisto p {
+            font-size: x-large;
+            font-weight: 500;
+        }
+        
+        .divBtnConfirmOrder {
+            display: flex;
+            justify-content: end;
+        }
+
+        #btnConfirmOrder {
+            color: #fff;
+            background-color: rgb(40, 129, 40);
+            border: none;
+        }
+        #btnConfirmOrder:hover {
+            background-color: rgb(35, 110, 35);
+        }
+        #btnConfirmOrder:active {
+            background-color: rgb(30, 95, 30);
+        }
+
+
+        @media screen and (max-width: 991px) {
+            .divCheckoutProductCard {
+                margin-right: 1rem;
+            }
+            .divCheckoutProductCard img{
+                margin: 0.5rem 0.4rem 1.5rem 0;
+            }
+            
+            #divRiepilogoOrdine h2 {
+                margin-top: 4rem;
+            }
+
+
+        }
+
+        @media screen and (max-width: 492px) {
+            .divCheckoutProductCard {
+                margin-right: 0rem;
+            }
+            .divCheckoutProductCard img{
+                margin: 0.5rem 0.2rem 1.5rem 0;
+            }
+        }
+
+
+    </style>
+</body>
+</html>

@@ -60,25 +60,26 @@ footer{
     text-align: center;
 }
 
-footer a {
-    color: var(--verde-primary);
+footer * {
+    color: rgb(226, 226, 226);
 }
 
-
+footer a {
+    text-decoration: none;
+}
 
 footer ul{
-    margin-bottom: 10px;
+    margin-bottom: 4px;
     list-style-type: none;
     padding: 0;
     display: flex;
     gap: 1.5rem;
-    font-size: 0.9rem;
+    font-size: 12px;
 }
 
 
 footer p{
-    font-size: smaller;
-    color: rgba(128, 128, 128, 0.356);
+    font-size: 12px;
 }
 
 footer img{
