@@ -1,10 +1,10 @@
 let header = document.getElementById('header')
 
-header.innerHTML = `<a href="./index.html"><img id = "logo" src="./img/logo.webp" alt=""></a>
+header.innerHTML = `
 
-<div class="container align-items-center" style="grid-template-columns: 1fr 2fr;">
+<div class="container mw-100 px-0" >
   <div class="d-flex align-items-center">
-
+    <a href="./index.html"><img id = "logo" src="./img/logo.webp" alt=""></a>
     <form class="w-100 me-3">
       <input type="search" class="form-control" placeholder="Cerca su Amatron" aria-label="Search">
     </form>

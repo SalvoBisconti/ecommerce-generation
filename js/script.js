@@ -165,11 +165,17 @@ function creaCardCatalogo() {
     
 }
 
-// navbar delle categorie + dropdown sottocategorie
+// navbar delle categorie + dropdown sottocategorie // Vale
 
 // pagina del singolo prodotto //Yeison
 
-// checkout utente
+// checkout utente 
+
+// carrello // Saverio
+
+// notifica cancellazione prodotto dal carrello
+// bottoni modifica quantità prodotto
+// notifica pagamento/ordine effettuato
 
 
 // al click del logo torna alla home

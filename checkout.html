@@ -14,6 +14,7 @@
     integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+
     <!-- Roboto font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,10 +22,10 @@
     href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
     rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
-<body class="bg-dark">
-    <header class="py-3 border-bottom d-flex" id="header"></header>
+<body>
+    <header class="py-3 d-flex" id="header"></header>
 
     <div id="divCheckout" class="container">
         <div class="row">
@@ -139,177 +140,6 @@
     <script src="./js/checkout.js"></script>
     <script src="./js/script.js"></script>
 
-    <style>
-        #divCheckout {
-            color: rgb(223, 222, 222);
-            margin-top: 100px;
-        }
-        #divCarrelloCheckout {
-            display: flex;
-            flex-direction: column;
-        }
-        #divCarrelloCheckout h1 {
-            font-weight: 700;
-            margin-bottom: 1.6rem;
-        }
-
-
-        .divCheckoutProductCard {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-right: 8rem;
-        }
-
-
-        .divCheckoutProductCard p {
-            margin: 0;
-        }
-
-        .divCheckoutProductCard img{
-            width: 125px;
-            height: 125px;
-            border-radius: 0.5rem;
-            margin: 0.5rem 1.2rem 1.5rem 0;
-        }
-
-        .articoliCheckout {
-            margin-bottom: 0.2rem;
-        }
-
-        .divCheckoutSummary {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        #divRiepilogoOrdine h2 {
-            display: inline-block;
-            margin-bottom: 1rem;
-            margin-top: 1.4rem;
-            font-weight: 600;
-            font-size: 1.8rem;
-        }
-        #divRiepilogoOrdine h4 {
-            display: inline-block;
-            font-weight: 500;
-            margin-right: 0.5rem;
-            margin-bottom: 1rem;
-            margin-top: 1rem;
-            font-size: 1.3rem;
-        }
-        #numeroArticoliCheckout {
-            display: inline;
-            font-size: medium;
-            font-weight: 600;
-            color: #fff;
-            border-radius: 0.3rem;
-            padding: 0.2rem 0.6rem;
-            background-color: var(--verde-primary);
-        }
-        #prezzoCheckout {
-            display: inline;
-            font-size: x-large;
-            font-weight: 500;
-        }
-
-        .divSpedizione {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .divSpedizione select {
-            font-size: 1rem;
-            border-radius: 0.5rem;
-            padding: 0.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .divCodiceSconto {
-            display: flex;
-            flex-direction: column;
-        }
-        .divCodiceSconto input {
-            padding: 0.5rem;
-            border-radius: 0.5rem;
-            font-size: 1.2rem;
-            border: none;
-            height: 50px;
-            text-transform: uppercase;
-        }
-        .divCodiceSconto p {
-            margin-top: 0.5rem;
-        }
-
-        #checkoutSummaryEnd {
-            margin-top: 1.5rem;
-            margin-bottom: 0.2rem;
-        }
-
-
-        .divAcquisto * {
-            margin-bottom: 0;
-        }
-        .divAcquisto {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 0.6rem;
-        }
-        .divAcquisto h6 {
-            display: inline-block;
-            font-size: 0.8rem;
-            align-self: center;
-            transform: translateY(4px)
-        }
-        .divAcquisto p {
-            font-size: x-large;
-            font-weight: 500;
-        }
-        
-        .divBtnConfirmOrder {
-            display: flex;
-            justify-content: end;
-        }
-
-        #btnConfirmOrder {
-            color: #fff;
-            background-color: rgb(40, 129, 40);
-            border: none;
-        }
-        #btnConfirmOrder:hover {
-            background-color: rgb(35, 110, 35);
-        }
-        #btnConfirmOrder:active {
-            background-color: rgb(30, 95, 30);
-        }
-
-
-        @media screen and (max-width: 991px) {
-            .divCheckoutProductCard {
-                margin-right: 1rem;
-            }
-            .divCheckoutProductCard img{
-                margin: 0.5rem 0.4rem 1.5rem 0;
-            }
-            
-            #divRiepilogoOrdine h2 {
-                margin-top: 4rem;
-            }
-
-
-        }
-
-        @media screen and (max-width: 492px) {
-            .divCheckoutProductCard {
-                margin-right: 0rem;
-            }
-            .divCheckoutProductCard img{
-                margin: 0.5rem 0.2rem 1.5rem 0;
-            }
-        }
-
-
-    </style>
+    
 </body>
 </html>
