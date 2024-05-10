@@ -165,7 +165,7 @@ function creaCardCatalogo() {
     
 }
 
-// navbar delle categorie + dropdown sottocategorie // Vale
+// 
 
 // pagina del singolo prodotto //Yeison
 

@@ -228,7 +228,13 @@ input[type="number"] {
 }
 
 
+.navbar_categorie p{
+    margin-top: 1rem;
+}
+
+
 .navbar_categorie{
+    margin-top: 1rem;
     border: 4px solid #4f930c;
     display: flex;
     justify-content: space-between; 
@@ -239,7 +245,14 @@ input[type="number"] {
 }
 
 
-/*                   CSS CHECKOUT                  */
+
+
+/*                 
+
+            CSS CHECKOUT 
+
+ */
+
 
 #divCheckout {
     color: rgb(223, 222, 222);
