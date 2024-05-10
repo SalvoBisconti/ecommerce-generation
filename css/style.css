@@ -235,7 +235,8 @@ input[type="number"] {
 
 .navbar_categorie{
     margin-top: 1rem;
-    border: 4px solid #4f930c;
+    border: 3px solid #4f930c;
+    border-radius: 0.2rem;
     display: flex;
     justify-content: space-between; 
     align-items: first baseline;

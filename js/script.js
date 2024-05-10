@@ -33,6 +33,8 @@ fetch('https://dummyjson.com/products?limit=100')
             creaCardSwiper();
         }else if (paginaCorrente == "catalogo.html"){
             creaCardCatalogo();
+        }else if (paginaCorrente == "prodotto.html"){
+            creaCardProdotto(JSON.parse(localStorage.getItem('prodottoSelezionato')));
         }
         
     });
@@ -81,7 +83,7 @@ fetch('https://dummyjson.com/products?limit=100')
         <div class="swiper-slide">
             <div class="card-body">
                 <div class="card-title fs-5 mb-2">${prodotto.title}</div>
-                <img src="${prodotto.images[0]}">
+                <img src="${prodotto.images[0]}" class="imgProdotto">
                 <p>${prodotto.price}€</p> 
                 
                 <button data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" data-product-id="${prodotto.id}" class="btn-aggiungi-carrello">Aggiungi al carrello<span class="fa-solid fa-cart-plus"></span></button>
@@ -91,6 +93,13 @@ fetch('https://dummyjson.com/products?limit=100')
         
     });
     
+    let imgProdotti = document.querySelectorAll(`.imgProdotto`);
+    [...imgProdotti].forEach(img => {
+        img.addEventListener('click',function(){
+            window.location.href=`./prodotto.html?id=${(arrayProducts[this.getAttribute('data-product-id')-1])}`;
+        });
+    });
+
     let allBtnAggiungiAlCarrello = document.querySelectorAll(`.btn-aggiungi-carrello`);
     [...allBtnAggiungiAlCarrello].forEach(btn => {
         btn.addEventListener('click',function(){
@@ -183,6 +192,32 @@ function creaCardCatalogo() {
 
 
 
+function creaCardProdotto(prodotto) {
+
+    let titoloProdotto = document.getElementById('titoloProdotto');
+    let immagineProdotto = document.getElementById('immagineProdotto');
+    let descrizioneProdotto = document.getElementById('descrizioneProdotto');
+    let prezzo = document.getElementById('prezzo');
+    let quantita = document.getElementById('quantita');
+
+    let btnAggiungiAlCarrello = document.getElementById('btnAggiungiAlCarrello');
+    
+        titoloProdotto.textContent = `${prodotto.title}`;
+        immagineProdotto.src = `${prodotto.images[0]}`;
+        descrizioneProdotto.textContent = `${prodotto.description}`;
+        prezzo.textContent = `${prodotto.price}`;
+        quantita.value = `${prodotto.quantity}`;
+
+        btnAggiungiAlCarrello.setAttribute('data-product-id', product.id);
+
+        btnAggiungiAlCarrello.addEventListener('click',function(){
+            aggiungiAlCarrello(arrayProducts[this.getAttribute('data-product-id')-1]);
+        });
+        
+    };
+    
+
+    
 
 
 
